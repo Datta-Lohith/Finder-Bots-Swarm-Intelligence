@@ -1,6 +1,6 @@
 # Finder-Bots-Swarm-Intelligence
 
-[![Build Status](https://github.com/Datta-Lohith/Finder-Bots-Swarm-Intelligence/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)](https://github.com/Datta-Lohith/Finder-Bots-Swarm-Intelligence/actions/workflows/run-unit-test-and-upload-codecov.yml)
+[![Build Status](https://github.com/Datta-Lohith/Finder-Bots-Swarm-Intelligence/actions/workflows/build.yaml/badge.svg)](https://github.com/Datta-Lohith/Finder-Bots-Swarm-Intelligence/actions/workflows/build.yaml)
 [![codecov](https://codecov.io/gh/Datta-Lohith/Finder-Bots-Swarm-Intelligence/graph/badge.svg?token=684mJ3W7BC)](https://codecov.io/gh/Datta-Lohith/Finder-Bots-Swarm-Intelligence)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 

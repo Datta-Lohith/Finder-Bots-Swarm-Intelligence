@@ -2,6 +2,10 @@ devel/
 logs/
 build/
 bin/
+.vscode
+.cache
+install/
+log/
 lib/
 msg_gen/
 srv_gen/
@@ -49,3 +53,7 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Custom files
+compile_commands.json
+combined_test_coverage

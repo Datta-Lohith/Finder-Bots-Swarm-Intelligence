@@ -1,0 +1,68 @@
+##############################################################################
+#
+# GitGub CI workflow syntax spec:
+#    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+#
+# CodeCov github action setup:
+#    https://github.com/codecov/codecov-action
+#
+# CodeCov badge setup:
+#    https://docs.codecov.com/docs/status-badges
+#
+# version 1.1
+##############################################################################
+
+name: Build
+
+on:
+  # Triggered whenever push to main
+  push:
+    branches: [ "main" ]
+
+  # Triggered whenever a pull request is created on main
+  pull_request:
+    branches: [ "main" ]
+    types: [opened]
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  build-run-upload:
+    runs-on: ubuntu-22.04
+
+    defaults:
+        run:
+          shell: bash       # specify bash for use with docker container
+    container:
+        image: osrf/ros:humble-desktop # use ROS Humble from docker hub repository
+
+    steps:
+      # Step 1: Check out the code
+      - uses: actions/checkout@v3
+
+      # Step 2: Install dependencies
+      - name: Install build packages
+        run: |
+          sudo apt update
+          sudo apt install -y doxygen lcov gcovr pandoc
+          source /opt/ros/humble/setup.bash
+          sudo apt install -y ros-${ROS_DISTRO}-catch-ros2
+          
+      # Step 3: Build, run unit tests, and generate coverage report
+      - name: Configure CMake flags and build executables
+        run: |
+          ./do-tests-and-coverage.bash
+          ./do-docs.bash
+          cat build/test_coverage.info
+          
+      # Step 4: Upload coverage result to CodeCov
+      - name: Upload coverage result to CodeCov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # required (must add token in your github repo)
+          files: ${{github.workspace}}/build/test_coverage.info
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
+          disable_search: true # optional (default = false)
+          plugin: none         # optional (xcode, gcov, pycoverage)

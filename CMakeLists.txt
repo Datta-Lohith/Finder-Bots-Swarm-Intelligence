@@ -53,8 +53,6 @@ else()
   message(FATAL_ERROR "Doxygen needs to be installed to generate the doxygen documentation")
 endif()
 
-# add_subdirectory(test)
-
 doxygen_add_docs(docs           # target name
   ${PROJECT_SOURCE_DIR}/src
   ${PROJECT_SOURCE_DIR}/test
@@ -102,13 +100,13 @@ ament_target_dependencies(warehousehead rclcpp std_msgs)
 
 install(TARGETS
   finderBots
-  lostparts
-  warehousehead
   DESTINATION lib/${PROJECT_NAME}
 )
 
 install(DIRECTORY
   launch
+  worlds
+  models
   DESTINATION share/${PROJECT_NAME}
 )
 

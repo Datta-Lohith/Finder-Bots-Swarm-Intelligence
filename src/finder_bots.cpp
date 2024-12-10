@@ -127,7 +127,39 @@ class FinderBots : public rclcpp::Node {
     orientation_ = msg->pose.pose.orientation;
   }
 
+  // Navigation Logic
+  void navigationLoop() {
+    if (!navigate_active_) return;
 
+    double distance_to_goal = calculateEuclideanDistance(current_position_, {goal_x_, goal_y_});
+    if (distance_to_goal <= 0.1) {
+      stopRobot();
+      RCLCPP_INFO(this->get_logger(), "Goal reached!");
+    } else if (!move_flag_) {
+        if (!obstacle_detected_) {
+        double angle_to_goal = calculateAngleToGoal();
+        moveRobot(linear_speed_, angle_to_goal);
+      } else {
+        RCLCPP_WARN(this->get_logger(), "Obstacle detected(Avoiding obstacle)");
+        moveRobot(0.0,0.2);
+      }
+    } else {
+      RCLCPP_INFO(this->get_logger(), "Red object detected. Halting movement.");
+      stopRobot();
+    }
+  }
+
+  // Helper Methods
+  double calculateEuclideanDistance(const std::pair<double, double>& a,
+                                     const std::pair<double, double>& b) {
+    return std::sqrt(std::pow(b.first - a.first, 2) + std::pow(b.second - a.second, 2));
+  }
+
+  double calculateAngleToGoal() {
+    double angle_to_goal = std::atan2(goal_y_ - current_position_.second,
+                                      goal_x_ - current_position_.first);
+    return angle_to_goal;
+  }
 
 
 

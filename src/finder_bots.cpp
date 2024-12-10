@@ -1,13 +1,13 @@
 /**
  * @file finder_bots.cpp
  * @author Datta Lohith Gannavarapu, Dheeraj Vishnubhotla, Nazrin Gurbanova
- * @brief This file contains the implementation of the RobotSwarm class that publishes messages
+ * @brief This file contains the implementation of the FinderBots class that publishes messages
  *        at regular intervals using ROS 2.
  * @version 1.0
  * @date 2024-11-24
  * @copyright Copyright (c) 2024
  *
- * This file provides the implementation of the RobotSwarm class, which creates a ROS 2
+ * This file provides the implementation of the FinderBots class, which creates a ROS 2
  * publisher to publish messages with a topic name defined by the user and a frequency 
  * specified via parameters. It uses a timer to periodically call a callback function
  * that publishes a message with an incrementing count.
@@ -23,23 +23,23 @@ using PUBLISHER = rclcpp::Publisher<STRING>::SharedPtr;
 using TIMER = rclcpp::TimerBase::SharedPtr;
 
 /**
- * @class RobotSwarm
+ * @class FinderBots
  * @brief A ROS 2 Node that publishes a message with an incrementing count at regular intervals.
  * 
- * The RobotSwarm class initializes a ROS 2 node that publishes messages at a user-defined
+ * The FinderBots class initializes a ROS 2 node that publishes messages at a user-defined
  * frequency. The messages contain an incrementing count to indicate the number of times
  * the node has published. The frequency and topic name are configurable parameters.
  */
-class RobotSwarm : public rclcpp::Node {
+class FinderBots : public rclcpp::Node {
  public:
  /**
-   * @brief Constructor for RobotSwarm class.
+   * @brief Constructor for FinderBots class.
    * 
    * Initializes the ROS 2 node, declares parameters for topic name and publish frequency,
    * and sets up the publisher and timer. The timer calls the `timer_callback` function 
    * at the specified frequency.
    */
-  RobotSwarm() : Node("RobotSwarm"), count_(0) {
+  FinderBots() : Node("FinderBots"), count_(0) {
     // Declare parameters for topic name and publish frequency
     this->declare_parameter<std::string>("topic_name", "swarm");
     this->declare_parameter<int>("publish_frequency", 500);
@@ -50,7 +50,7 @@ class RobotSwarm : public rclcpp::Node {
     publisher_ = this->create_publisher<STRING>(topicName, 10);
     timer_ = this->create_wall_timer(
         std::chrono::milliseconds(publishFrequency),
-          std::bind(&RobotSwarm::timer_callback, this));
+          std::bind(&FinderBots::timer_callback, this));
   }
 
  private:
@@ -79,7 +79,7 @@ class RobotSwarm : public rclcpp::Node {
 /**
  * @brief Main function to initialize, spin, and shutdown the ROS 2 node.
  * 
- * Initializes the ROS 2 system, creates an instance of the RobotSwarm node, and starts
+ * Initializes the ROS 2 system, creates an instance of the FinderBots node, and starts
  * the event loop. After the event loop is finished, the ROS 2 system is shut down.
  *
  * @param argc The number of command-line arguments.
@@ -88,7 +88,7 @@ class RobotSwarm : public rclcpp::Node {
  */
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<RobotSwarm>();
+  auto node = std::make_shared<FinderBots>();
   rclcpp::spin(node);
   rclcpp::shutdown();
   return 0;

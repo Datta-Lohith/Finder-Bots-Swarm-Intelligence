@@ -119,4 +119,16 @@ class FinderBots : public rclcpp::Node {
     navigation_timer_ = this->create_wall_timer(
         std::chrono::milliseconds(100), std::bind(&FinderBots::navigationLoop, this));
   }
+
+  // Callbacks
+  void odometryCallback(const nav_msgs::msg::Odometry::SharedPtr msg) {
+    current_position_.first = msg->pose.pose.position.x;
+    current_position_.second = msg->pose.pose.position.y;
+    orientation_ = msg->pose.pose.orientation;
+  }
+
+
+
+
+
 };

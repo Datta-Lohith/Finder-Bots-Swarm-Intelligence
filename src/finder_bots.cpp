@@ -158,9 +158,35 @@ class FinderBots : public rclcpp::Node {
   double calculateAngleToGoal() {
     double angle_to_goal = std::atan2(goal_y_ - current_position_.second,
                                       goal_x_ - current_position_.first);
-    return angle_to_goal;
+    return normalizeAngle(angle_to_goal - getYaw());
   }
 
+  double getYaw() {
+    tf2::Quaternion quaternion(orientation_.x, orientation_.y, orientation_.z, orientation_.w);
+    tf2::Matrix3x3 matrix(quaternion);
+    double roll, pitch, yaw;
+    matrix.getRPY(roll, pitch, yaw);
+    return yaw;
+  }
 
+  double normalizeAngle(double angle) {
+    while (angle > M_PI) angle -= 2 * M_PI;
+    while (angle < -M_PI) angle += 2 * M_PI;
+    return angle;
+  }
 
+  void moveRobot(double linear, double angular) {
+    geometry_msgs::msg::Twist cmd_msg;
+    cmd_msg.linear.x = linear;
+    cmd_msg.angular.z = angular;
+    velocity_publisher_->publish(cmd_msg);
+  }
+
+  void stopRobot() {
+    navigate_active_ = false;
+    geometry_msgs::msg::Twist cmd_msg;
+    cmd_msg.linear.x = 0.0;
+    cmd_msg.angular.z = 0.0;
+    velocity_publisher_->publish(cmd_msg);
+  }
 };

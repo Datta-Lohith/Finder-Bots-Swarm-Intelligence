@@ -127,6 +127,64 @@ class FinderBots : public rclcpp::Node {
     orientation_ = msg->pose.pose.orientation;
   }
 
+  void lidarCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
+    auto threshold = 0.5;
+    obstacle_detected_ = false;
+
+    // Indices for the front of the robot for 40 degrees on either hemisphere
+    int left_start_index = 0;
+    int left_end_index = 40;
+    int right_start_index = 320;
+    int right_end_index = 359;
+
+    auto check_obstacle = [&](int start, int end) {
+        for (int i = start; i <= end; ++i) {
+            if (msg->ranges[i] < threshold) {
+                obstacle_detected_ = true;
+                RCLCPP_INFO(this->get_logger(),
+                    "Obstacle detected in front. Range: %f at index %d",
+                        msg->ranges[i], i);
+                return true;
+            }
+        }
+        return false;
+    };
+
+    if(!check_obstacle(left_start_index, left_end_index))
+    {
+    check_obstacle(right_start_index, right_end_index);
+    }
+  }
+
+  void imageCallback(const sensor_msgs::msg::Image::SharedPtr msg) {
+    try {
+      cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+      cv::Mat hsv_image;
+      cv::cvtColor(cv_ptr->image, hsv_image, cv::COLOR_BGR2HSV);
+
+      cv::Scalar lower_red(0, 100, 100);
+      cv::Scalar upper_red(10, 255, 255);
+
+      cv::Mat red_mask;
+      cv::inRange(hsv_image, lower_red, upper_red, red_mask);
+
+      if (cv::countNonZero(red_mask) > 15000 && !move_flag_) {
+        RCLCPP_INFO(this->get_logger(), "Red object detected!");
+        move_flag_ = true;
+        std_msgs::msg::Bool move_flag_msg;
+        move_flag_msg.data = true;
+        move_flag_publisher_->publish(move_flag_msg);
+      }
+    } catch (cv_bridge::Exception& e) {
+      RCLCPP_ERROR(this->get_logger(), "cv_bridge exception: %s", e.what());
+    }
+  }
+
+  void moveFlagCallback(const std_msgs::msg::Bool::SharedPtr msg) {
+    move_flag_ = msg->data;
+    RCLCPP_INFO(this->get_logger(), "Move flag updated: %s", move_flag_ ? "true" : "false");
+  }
+
   // Navigation Logic
   void navigationLoop() {
     if (!navigate_active_) return;

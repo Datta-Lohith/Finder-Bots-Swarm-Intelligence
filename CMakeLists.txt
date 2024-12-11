@@ -113,6 +113,7 @@ install(TARGETS
 install(DIRECTORY
   launch
   worlds
+  test
   models
   DESTINATION share/${PROJECT_NAME}
 )
@@ -143,7 +144,7 @@ if(BUILD_TESTING)
 
   add_executable(catch_test_finderBots ${TESTFILES})
   target_link_libraries(catch_test_finderBots catch_ros2::catch_ros2_with_node_main)
-  ament_target_dependencies(catch_test_finderBots rclcpp std_msgs)
+  ament_target_dependencies(catch_test_finderBots rclcpp cv_bridge sensor_msgs geometry_msgs OpenCV nav_msgs tf2 tf2_ros)
 
   install(TARGETS catch_test_finderBots
     DESTINATION lib/${PROJECT_NAME})

@@ -25,6 +25,18 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(catch_ros2 REQUIRED)  # Add Catch2
 find_package(Doxygen REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+# Add include directories
+include_directories(
+  ${cv_bridge_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
 
 # Doxygen Rules
 if(DOXYGEN_FOUND)
@@ -90,13 +102,8 @@ enable_testing()
 include(GoogleTest)
 
 # Add executables
-add_executable(finderBots src/finder_bots.cpp)
-add_executable(lostparts src/lost_parts.cpp)
-add_executable(warehousehead src/warehouse_head.cpp)
-
-ament_target_dependencies(finderBots rclcpp std_msgs)
-ament_target_dependencies(lostparts rclcpp std_msgs)
-ament_target_dependencies(warehousehead rclcpp std_msgs)
+add_executable(finderBots src/finder_bots_master.cpp)
+ament_target_dependencies(finderBots rclcpp cv_bridge sensor_msgs geometry_msgs OpenCV nav_msgs tf2 tf2_ros)
 
 install(TARGETS
   finderBots

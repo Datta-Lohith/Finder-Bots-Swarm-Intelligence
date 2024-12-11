@@ -1,6 +1,0 @@
-<map id="RobotSwarm" name="RobotSwarm">
-<area shape="rect" id="node1" title="A ROS 2 Node that publishes a message with an incrementing count at regular intervals." alt="" coords="93,160,231,252"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,108,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="132,5,192,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="217,5,302,83"/>
-</map>

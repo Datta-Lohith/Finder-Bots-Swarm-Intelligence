@@ -1,0 +1,9 @@
+<map id="FinderBots::navigationLoop" name="FinderBots::navigationLoop">
+<area shape="rect" id="node1" title="Navigation loop for the FinderBots class." alt="" coords="5,125,204,152"/>
+<area shape="rect" id="node2" href="$classFinderBots.html#a860789e0ae8e068de05167bf3ffa5f96" title="Calculates the angle to the goal position." alt="" coords="265,23,460,65"/>
+<area shape="rect" id="node5" href="$classFinderBots.html#a683d41f73b615e403ac0dddb22b15ebd" title="Calculates the Euclidean distance between two points." alt="" coords="252,89,473,130"/>
+<area shape="rect" id="node6" href="$classFinderBots.html#a360f7cbd4f85646326f8c8e5ce2f6391" title="Moves the robot with the specified linear and angular velocities." alt="" coords="275,155,450,181"/>
+<area shape="rect" id="node7" href="$classFinderBots.html#a2a19adc36787cae23d9dab4d6f4cbaf5" title="Stops the robot by setting the linear and angular velocities to zero." alt="" coords="280,205,445,232"/>
+<area shape="rect" id="node3" href="$classFinderBots.html#aafb371852f2d19d2b953c9071cd12319" title="Gets the yaw angle from the orientation quaternion." alt="" coords="549,5,695,32"/>
+<area shape="rect" id="node4" href="$classFinderBots.html#a8b5898997f13753962824024ffb32f60" title="Normalizes the angle to the range [&#45;pi, pi]." alt="" coords="521,56,723,83"/>
+</map>

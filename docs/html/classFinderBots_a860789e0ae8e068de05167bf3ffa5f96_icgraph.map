@@ -1,0 +1,6 @@
+<map id="FinderBots::calculateAngleToGoal" name="FinderBots::calculateAngleToGoal">
+<area shape="rect" id="node1" title="Calculates the angle to the goal position." alt="" coords="711,5,905,47"/>
+<area shape="rect" id="node2" href="$classFinderBots.html#af95ec9c769610640afdbf416bc74f7c8" title="Navigation loop for the FinderBots class." alt="" coords="464,13,663,39"/>
+<area shape="rect" id="node3" href="$classFinderBots.html#a6baa3275f366ffdef2074c29b3e901c8" title="Initializes the topics and timers for the FinderBots class." alt="" coords="221,5,416,47"/>
+<area shape="rect" id="node4" href="$classFinderBots.html#ab3c08767c48b26267ebe1b0737bcf8cd" title="for FinderBots class." alt="" coords="5,13,173,39"/>
+</map>

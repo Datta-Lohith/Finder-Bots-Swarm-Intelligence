@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['main_4',['main',['../finder__bots_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;finder_bots.cpp'],['../lost__parts_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;lost_parts.cpp'],['../warehouse__head_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;warehouse_head.cpp'],['../test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;test.cpp']]]
+  ['image_5fsubscriber_5f_11',['image_subscriber_',['../classFinderBots.html#a63cc57e46ab76ab22946a7f29786bdb8',1,'FinderBots']]],
+  ['imagecallback_12',['imageCallback',['../classFinderBots.html#a1fb4e79b888511eeb1b3b499719a7c6b',1,'FinderBots']]],
+  ['initializegoals_13',['initializeGoals',['../classFinderBotsMaster.html#a088b7983eacbe240034bd3b8b74bedf8',1,'FinderBotsMaster']]],
+  ['initializetopicsandtimers_14',['initializeTopicsAndTimers',['../classFinderBots.html#a6baa3275f366ffdef2074c29b3e901c8',1,'FinderBots']]]
 ];

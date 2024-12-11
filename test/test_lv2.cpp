@@ -72,9 +72,8 @@ TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_1/cmd_vel'",
 
   // Subscription to the "/robot_1/cmd_vel" topic
   auto subscription = create_subscription<geometry_msgs::msg::Twist>(
-    "/robot_1/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr msg) {
-      message = std::move(msg); 
-    });
+    "/robot_1/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
 
   // Loop until a message is received or the timeout is reached
   while (rclcpp::ok() && duration < timeout) {
@@ -107,9 +106,8 @@ TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_5/cmd_vel'",
 
   // Subscription to the "/robot_1/cmd_vel" topic
   auto subscription = create_subscription<geometry_msgs::msg::Twist>(
-    "/robot_5/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr msg) {
-      message = std::move(msg); 
-    });
+    "/robot_5/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
 
   // Loop until a message is received or the timeout is reached
   while (rclcpp::ok() && duration < timeout) {
@@ -142,9 +140,8 @@ TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_11/cmd_vel'",
 
   // Subscription to the "/robot_1/cmd_vel" topic
   auto subscription = create_subscription<geometry_msgs::msg::Twist>(
-    "/robot_11/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr msg) {
-      message = std::move(msg); 
-    });
+    "/robot_11/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
 
   // Loop until a message is received or the timeout is reached
   while (rclcpp::ok() && duration < timeout) {
@@ -165,10 +162,11 @@ TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_11/cmd_vel'",
  * 
  * This test plays a rosbag file and checks if the "swarm" topic is subscribed and receives messages.
  */
-TEST_CASE_METHOD(TestNode, "Run rosbag and check topic subscription 'red_object_detected'",
+TEST_CASE_METHOD(TestNode, "Run rosbag and check sub 'red_object_detected'",
   "[finderBots]") {
   // Path to the rosbag file
-  std::string rosbag_path = ament_index_cpp::get_package_share_directory("finder_bots") + "/test/rosbag";
+  std::string rosbag_path = ament_index_cpp::get_package_share_directory
+    ("finder_bots") + "/test/rosbag";
 
   // Command to play the rosbag file
   std::string command = "ros2 bag play " + rosbag_path;
@@ -179,12 +177,11 @@ TEST_CASE_METHOD(TestNode, "Run rosbag and check topic subscription 'red_object_
   auto timeout = rclcpp::Duration::from_seconds(test_duration_);
 
   bool message = false;
-  
+
   // Create subscription to the "red_object_detected" topic
   auto subscription = create_subscription<std_msgs::msg::Bool>(
-      "/red_object_detected", 10, [&message](std_msgs::msg::Bool::UniquePtr msg) {
-    message = msg->data;
-  });
+      "/red_object_detected", 10, [&message](std_msgs::msg::Bool::UniquePtr
+       msg) {message = msg->data;});
 
   static bool rosbag_played = false;
   while (rclcpp::ok() && duration < timeout) {

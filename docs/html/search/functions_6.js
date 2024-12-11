@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7etestnode_41',['~TestNode',['../classTestNode.html#afb1bb520d8650098eb7021ae58f19de8',1,'TestNode']]]
+  ['navigationloop_70',['navigationLoop',['../classFinderBots.html#af95ec9c769610640afdbf416bc74f7c8',1,'FinderBots']]],
+  ['normalizeangle_71',['normalizeAngle',['../classFinderBots.html#a8b5898997f13753962824024ffb32f60',1,'FinderBots']]]
 ];

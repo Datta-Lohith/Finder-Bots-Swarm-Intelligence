@@ -1,0 +1,11 @@
+<map id="FinderBots" name="FinderBots">
+<area shape="rect" id="node1" title="A ROS 2 Node that publishes a message with an incrementing count at regular intervals." alt="" coords="811,331,1031,599"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,147,108,224"/>
+<area shape="rect" id="node3" title=" " alt="" coords="569,147,654,224"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1218,147,1285,224"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1309,147,1482,224"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1507,147,1601,224"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1641,147,1691,224"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1785,147,1872,224"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1759,5,1898,97"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="FinderBots::initializeTopicsAndTimers" name="FinderBots::initializeTopicsAndTimers">
+<area shape="rect" id="node1" title="Initializes the topics and timers for the FinderBots class." alt="" coords="5,99,200,141"/>
+<area shape="rect" id="node2" href="$classFinderBots.html#a1fb4e79b888511eeb1b3b499719a7c6b" title="Callback function for image data." alt="" coords="260,5,456,32"/>
+<area shape="rect" id="node3" href="$classFinderBots.html#aa2aba409a4aad0ddd9b88efb1c43f3af" title="Callback function for lidar data." alt="" coords="266,56,450,83"/>
+<area shape="rect" id="node4" href="$classFinderBots.html#a8ff000c87902042be12b4dc14dbc22c6" title="Callback function for move flag." alt="" coords="248,107,468,133"/>
+<area shape="rect" id="node5" href="$classFinderBots.html#af95ec9c769610640afdbf416bc74f7c8" title="Navigation loop for the FinderBots class." alt="" coords="259,157,457,184"/>
+<area shape="rect" id="node12" href="$classFinderBots.html#a7bcbf486a0ed7d2dfde058f674c481fd" title="Callback function for odometry data." alt="" coords="249,208,467,235"/>
+<area shape="rect" id="node6" href="$classFinderBots.html#a860789e0ae8e068de05167bf3ffa5f96" title="Calculates the angle to the goal position." alt="" coords="529,55,724,97"/>
+<area shape="rect" id="node9" href="$classFinderBots.html#a683d41f73b615e403ac0dddb22b15ebd" title="Calculates the Euclidean distance between two points." alt="" coords="516,121,737,162"/>
+<area shape="rect" id="node10" href="$classFinderBots.html#a360f7cbd4f85646326f8c8e5ce2f6391" title="Moves the robot with the specified linear and angular velocities." alt="" coords="539,187,714,213"/>
+<area shape="rect" id="node11" href="$classFinderBots.html#a2a19adc36787cae23d9dab4d6f4cbaf5" title="Stops the robot by setting the linear and angular velocities to zero." alt="" coords="544,237,709,264"/>
+<area shape="rect" id="node7" href="$classFinderBots.html#aafb371852f2d19d2b953c9071cd12319" title="Gets the yaw angle from the orientation quaternion." alt="" coords="813,37,959,64"/>
+<area shape="rect" id="node8" href="$classFinderBots.html#a8b5898997f13753962824024ffb32f60" title="Normalizes the angle to the range [&#45;pi, pi]." alt="" coords="785,88,987,115"/>
+</map>

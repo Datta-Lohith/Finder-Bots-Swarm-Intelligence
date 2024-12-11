@@ -1,0 +1,11 @@
+<map id="FinderBotsMaster" name="FinderBotsMaster">
+<area shape="rect" id="node1" title="A ROS 2 Node that controls a swarm of FinderBots." alt="" coords="212,643,373,749"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,495,108,573"/>
+<area shape="rect" id="node3" title=" " alt="" coords="133,488,311,580"/>
+<area shape="rect" id="node4" title=" " alt="" coords="14,348,233,425"/>
+<area shape="rect" id="node5" title=" " alt="" coords="65,145,222,223"/>
+<area shape="rect" id="node6" title=" " alt="" coords="189,5,228,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="225,247,355,324"/>
+<area shape="rect" id="node8" title=" " alt="" coords="336,495,375,573"/>
+<area shape="rect" id="node9" title=" " alt="" coords="418,495,503,573"/>
+</map>

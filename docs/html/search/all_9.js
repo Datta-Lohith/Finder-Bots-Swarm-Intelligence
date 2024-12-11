@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['warehouse_5fhead_2ecpp_20',['warehouse_head.cpp',['../warehouse__head_8cpp.html',1,'']]],
-  ['warehousehead_21',['WarehouseHead',['../classWarehouseHead.html',1,'WarehouseHead'],['../classWarehouseHead.html#abf2a07a02240115f52e171f82cc84b08',1,'WarehouseHead::WarehouseHead()']]]
+  ['setgoal_37',['setGoal',['../classFinderBots.html#a0fc0e930134744e6c25f209ba71019e5',1,'FinderBots']]],
+  ['setup_38',['SetUp',['../classTestNode.html#a15fad6bd4b0d697705771db447bdd0ce',1,'TestNode']]],
+  ['stoprobot_39',['stopRobot',['../classFinderBots.html#a2a19adc36787cae23d9dab4d6f4cbaf5',1,'FinderBots']]]
 ];

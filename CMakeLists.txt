@@ -25,6 +25,18 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(catch_ros2 REQUIRED)  # Add Catch2
 find_package(Doxygen REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+# Add include directories
+include_directories(
+  ${cv_bridge_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
 
 # Doxygen Rules
 if(DOXYGEN_FOUND)
@@ -52,8 +64,6 @@ if(DOXYGEN_FOUND)
 else()
   message(FATAL_ERROR "Doxygen needs to be installed to generate the doxygen documentation")
 endif()
-
-# add_subdirectory(test)
 
 doxygen_add_docs(docs           # target name
   ${PROJECT_SOURCE_DIR}/src
@@ -92,23 +102,19 @@ enable_testing()
 include(GoogleTest)
 
 # Add executables
-add_executable(finderBots src/finder_bots.cpp)
-add_executable(lostparts src/lost_parts.cpp)
-add_executable(warehousehead src/warehouse_head.cpp)
-
-ament_target_dependencies(finderBots rclcpp std_msgs)
-ament_target_dependencies(lostparts rclcpp std_msgs)
-ament_target_dependencies(warehousehead rclcpp std_msgs)
+add_executable(finderBots src/finder_bots_master.cpp)
+ament_target_dependencies(finderBots rclcpp cv_bridge sensor_msgs geometry_msgs OpenCV nav_msgs tf2 tf2_ros)
 
 install(TARGETS
   finderBots
-  lostparts
-  warehousehead
   DESTINATION lib/${PROJECT_NAME}
 )
 
 install(DIRECTORY
   launch
+  worlds
+  test
+  models
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -138,7 +144,7 @@ if(BUILD_TESTING)
 
   add_executable(catch_test_finderBots ${TESTFILES})
   target_link_libraries(catch_test_finderBots catch_ros2::catch_ros2_with_node_main)
-  ament_target_dependencies(catch_test_finderBots rclcpp std_msgs)
+  ament_target_dependencies(catch_test_finderBots rclcpp cv_bridge sensor_msgs geometry_msgs OpenCV nav_msgs tf2 tf2_ros)
 
   install(TARGETS catch_test_finderBots
     DESTINATION lib/${PROJECT_NAME})

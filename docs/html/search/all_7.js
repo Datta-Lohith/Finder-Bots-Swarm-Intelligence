@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['setup_9',['SetUp',['../classTestNode.html#a15fad6bd4b0d697705771db447bdd0ce',1,'TestNode']]],
-  ['string_10',['STRING',['../finder__bots_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;finder_bots.cpp'],['../lost__parts_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;lost_parts.cpp'],['../warehouse__head_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;warehouse_head.cpp']]]
+  ['obstacle_5fdetected_5f_29',['obstacle_detected_',['../classFinderBots.html#aa7c4b938adb35bd0fd14b157e1546c2c',1,'FinderBots']]],
+  ['odom_30',['ODOM',['../finder__bots__master_8cpp.html#a0d14f9fa0f53f31f888a9fd88db78a51',1,'finder_bots_master.cpp']]],
+  ['odom_5fsubscriber_5f_31',['odom_subscriber_',['../classFinderBots.html#aea346c0b80923dec61f57ca636645756',1,'FinderBots']]],
+  ['odometrycallback_32',['odometryCallback',['../classFinderBots.html#a7bcbf486a0ed7d2dfde058f674c481fd',1,'FinderBots']]],
+  ['orientation_5f_33',['orientation_',['../classFinderBots.html#a8139440b34d5b454c8abafc75d359b4c',1,'FinderBots']]]
 ];

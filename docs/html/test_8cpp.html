@@ -101,6 +101,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abe9bd8e54553ac22eb874243b7808990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#abe9bd8e54553ac22eb874243b7808990">TEST_F</a> (<a class="el" href="classTestNode.html">TestNode</a>, test_for_publisher)</td></tr>
 <tr class="memdesc:abe9bd8e54553ac22eb874243b7808990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case to verify that a publisher is created successfully.  <a href="test_8cpp.html#abe9bd8e54553ac22eb874243b7808990">More...</a><br /></td></tr>
 <tr class="separator:abe9bd8e54553ac22eb874243b7808990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc69c4070cab18e3020676c81a97926"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#aafc69c4070cab18e3020676c81a97926">TEST_F</a> (<a class="el" href="classTestNode.html">TestNode</a>, test_no_initial_publishers)</td></tr>
+<tr class="memdesc:aafc69c4070cab18e3020676c81a97926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case to verify that no publishers exist initially.  <a href="test_8cpp.html#aafc69c4070cab18e3020676c81a97926">More...</a><br /></td></tr>
+<tr class="separator:aafc69c4070cab18e3020676c81a97926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function to run all tests.  <a href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">More...</a><br /></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +111,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file contains unit tests for a simple ROS 2 node that tests the creation of a publisher. </p>
 <dl class="section author"><dt>Author</dt><dd>Datta Lohith Gannavarapu, Dheeraj Vishnubhotla, Nazrin Gurbanova </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-11-24 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024</dd></dl>
 <p>This file uses Google Test (gtest) to test a basic ROS 2 node implementation. It focuses on the creation of a publisher and verifies that it has been successfully created by checking the number of publishers associated with a topic. </p>
@@ -153,7 +156,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="abe9bd8e54553ac22eb874243b7808990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe9bd8e54553ac22eb874243b7808990">&#9670;&nbsp;</a></span>TEST_F()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abe9bd8e54553ac22eb874243b7808990">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +183,37 @@ Functions</h2></td></tr>
 
 <p>Test case to verify that a publisher is created successfully. </p>
 <p>This test checks that when a publisher is created on the "topic", the number of publishers associated with the topic is equal to 1, indicating successful publisher creation. </p>
+
+</div>
+</div>
+<a id="aafc69c4070cab18e3020676c81a97926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc69c4070cab18e3020676c81a97926">&#9670;&nbsp;</a></span>TEST_F() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_F </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTestNode.html">TestNode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">test_no_initial_publishers&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test case to verify that no publishers exist initially. </p>
+<p>This test checks that before any publisher is created, the number of publishers associated with the "topic" is equal to 0. </p>
 
 </div>
 </div>

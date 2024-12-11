@@ -81,24 +81,28 @@ $(function() {
 <code>#include &lt;rclcpp/duration.hpp&gt;</code><br />
 <code>#include &lt;rclcpp/executors.hpp&gt;</code><br />
 <code>#include &lt;rclcpp/logging.hpp&gt;</code><br />
+<code>#include &lt;ament_index_cpp/get_package_share_directory.hpp&gt;</code><br />
 <code>#include &lt;rclcpp/rclcpp.hpp&gt;</code><br />
-<code>#include &lt;std_msgs/msg/string.hpp&gt;</code><br />
+<code>#include &lt;std_msgs/msg/bool.hpp&gt;</code><br />
+<code>#include &lt;geometry_msgs/msg/twist.hpp&gt;</code><br />
 <code>#include &lt;catch_ros2/catch_ros2.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for test_lv2.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="test__lv2_8cpp__incl.png" border="0" usemap="#atest_2test__lv2_8cpp" alt=""/></div>
 <map name="atest_2test__lv2_8cpp" id="atest_2test__lv2_8cpp">
-<area shape="rect" title="This file contains a test case for validating the publisher on the &quot;swarm&quot; topic in a ROS 2 node." alt="" coords="639,5,770,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,188,107"/>
-<area shape="rect" title=" " alt="" coords="213,80,279,107"/>
-<area shape="rect" title=" " alt="" coords="304,80,431,107"/>
-<area shape="rect" title=" " alt="" coords="455,80,602,107"/>
-<area shape="rect" title=" " alt="" coords="627,80,783,107"/>
-<area shape="rect" title=" " alt="" coords="807,80,949,107"/>
-<area shape="rect" title=" " alt="" coords="973,80,1105,107"/>
-<area shape="rect" title=" " alt="" coords="1129,80,1315,107"/>
-<area shape="rect" title=" " alt="" coords="1339,80,1534,107"/>
+<area shape="rect" title="This file contains a test case for validating the publisher on the &quot;swarm&quot; topic in a ROS 2 node." alt="" coords="813,5,943,32"/>
+<area shape="rect" title=" " alt="" coords="5,87,188,114"/>
+<area shape="rect" title=" " alt="" coords="213,87,279,114"/>
+<area shape="rect" title=" " alt="" coords="304,87,431,114"/>
+<area shape="rect" title=" " alt="" coords="455,87,602,114"/>
+<area shape="rect" title=" " alt="" coords="627,87,783,114"/>
+<area shape="rect" title=" " alt="" coords="807,87,949,114"/>
+<area shape="rect" title=" " alt="" coords="973,80,1191,121"/>
+<area shape="rect" title=" " alt="" coords="1215,87,1347,114"/>
+<area shape="rect" title=" " alt="" coords="1371,87,1547,114"/>
+<area shape="rect" title=" " alt="" coords="1572,87,1795,114"/>
+<area shape="rect" title=" " alt="" coords="1819,87,2014,114"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -110,20 +114,29 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab9afc5dd6a2849517ce58c154b94aef6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__lv2_8cpp.html#ab9afc5dd6a2849517ce58c154b94aef6">TEST_CASE_METHOD</a> (<a class="el" href="classTestNode.html">TestNode</a>, &quot;Validate publisher on topic 'swarm'&quot;, &quot;[finderBots]&quot;)</td></tr>
-<tr class="memdesc:ab9afc5dd6a2849517ce58c154b94aef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case for validating the publisher on the "swarm" topic.  <a href="test__lv2_8cpp.html#ab9afc5dd6a2849517ce58c154b94aef6">More...</a><br /></td></tr>
-<tr class="separator:ab9afc5dd6a2849517ce58c154b94aef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff99e2e593ca7a43995e1411db1f3c5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__lv2_8cpp.html#aff99e2e593ca7a43995e1411db1f3c5c">TEST_CASE_METHOD</a> (<a class="el" href="classTestNode.html">TestNode</a>, &quot;Validate publisher on topic '/robot_1/cmd_vel'&quot;, &quot;[finderBots]&quot;)</td></tr>
+<tr class="memdesc:aff99e2e593ca7a43995e1411db1f3c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case for validating the publisher on the "/robot_1/cmd_vel" topic.  <a href="test__lv2_8cpp.html#aff99e2e593ca7a43995e1411db1f3c5c">More...</a><br /></td></tr>
+<tr class="separator:aff99e2e593ca7a43995e1411db1f3c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b31c4bceca5972e6d796cfe6831b2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__lv2_8cpp.html#aa9b31c4bceca5972e6d796cfe6831b2e">TEST_CASE_METHOD</a> (<a class="el" href="classTestNode.html">TestNode</a>, &quot;Validate publisher on topic '/robot_5/cmd_vel'&quot;, &quot;[finderBots]&quot;)</td></tr>
+<tr class="memdesc:aa9b31c4bceca5972e6d796cfe6831b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case for validating the publisher on the "/robot_5/cmd_vel" topic.  <a href="test__lv2_8cpp.html#aa9b31c4bceca5972e6d796cfe6831b2e">More...</a><br /></td></tr>
+<tr class="separator:aa9b31c4bceca5972e6d796cfe6831b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7314f94c131360c5ec135e38c327d899"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__lv2_8cpp.html#a7314f94c131360c5ec135e38c327d899">TEST_CASE_METHOD</a> (<a class="el" href="classTestNode.html">TestNode</a>, &quot;Validate publisher on topic '/robot_11/cmd_vel'&quot;, &quot;[finderBots]&quot;)</td></tr>
+<tr class="memdesc:a7314f94c131360c5ec135e38c327d899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case for validating the publisher on the "/robot_11/cmd_vel" topic.  <a href="test__lv2_8cpp.html#a7314f94c131360c5ec135e38c327d899">More...</a><br /></td></tr>
+<tr class="separator:a7314f94c131360c5ec135e38c327d899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ed28390ea479104d3b953670e3491a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__lv2_8cpp.html#aa8ed28390ea479104d3b953670e3491a">TEST_CASE_METHOD</a> (<a class="el" href="classTestNode.html">TestNode</a>, &quot;Run rosbag and check sub 'red_object_detected'&quot;, &quot;[finderBots]&quot;)</td></tr>
+<tr class="memdesc:aa8ed28390ea479104d3b953670e3491a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test case for running a rosbag and checking if the "swarm" topic is subscribed.  <a href="test__lv2_8cpp.html#aa8ed28390ea479104d3b953670e3491a">More...</a><br /></td></tr>
+<tr class="separator:aa8ed28390ea479104d3b953670e3491a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file contains a test case for validating the publisher on the "swarm" topic in a ROS 2 node. </p>
 <dl class="section author"><dt>Author</dt><dd>Datta Lohith Gannavarapu, Dheeraj Vishnubhotla, Nazrin Gurbanova </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-11-24 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024</dd></dl>
 <p>This file uses Catch2 to test the functionality of subscribing to a topic and validating the message received within a specified duration. The test ensures that the "swarm" topic has a publisher that publishes a message within the given time limit. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ab9afc5dd6a2849517ce58c154b94aef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9afc5dd6a2849517ce58c154b94aef6">&#9670;&nbsp;</a></span>TEST_CASE_METHOD()</h2>
+<a id="aa8ed28390ea479104d3b953670e3491a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ed28390ea479104d3b953670e3491a">&#9670;&nbsp;</a></span>TEST_CASE_METHOD() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +150,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&quot;Validate publisher on topic 'swarm'&quot;&#160;</td>
+          <td class="paramtype">&quot;Run rosbag and check sub 'red_object_detected'&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -154,8 +167,119 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Test case for validating the publisher on the "swarm" topic. </p>
-<p>This test subscribes to the "swarm" topic and waits for a message to be received within the specified test duration. The test passes if a message is successfully received within the time frame; otherwise, it fails. </p>
+<p>Test case for running a rosbag and checking if the "swarm" topic is subscribed. </p>
+<p>This test plays a rosbag file and checks if the "swarm" topic is subscribed and receives messages. </p>
+
+</div>
+</div>
+<a id="aff99e2e593ca7a43995e1411db1f3c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff99e2e593ca7a43995e1411db1f3c5c">&#9670;&nbsp;</a></span>TEST_CASE_METHOD() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_METHOD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTestNode.html">TestNode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Validate publisher on topic '/robot_1/cmd_vel'&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;&#160;</td>
+          <td class="paramname">[finderBots]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test case for validating the publisher on the "/robot_1/cmd_vel" topic. </p>
+<p>This test subscribes to the "/robot_1/cmd_vel" topic and ensures that a message is received within the specified duration. </p>
+
+</div>
+</div>
+<a id="a7314f94c131360c5ec135e38c327d899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7314f94c131360c5ec135e38c327d899">&#9670;&nbsp;</a></span>TEST_CASE_METHOD() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_METHOD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTestNode.html">TestNode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Validate publisher on topic '/robot_11/cmd_vel'&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;&#160;</td>
+          <td class="paramname">[finderBots]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test case for validating the publisher on the "/robot_11/cmd_vel" topic. </p>
+<p>This test subscribes to the "/robot_11/cmd_vel" topic and ensures that a message is received within the specified duration. </p>
+
+</div>
+</div>
+<a id="aa9b31c4bceca5972e6d796cfe6831b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b31c4bceca5972e6d796cfe6831b2e">&#9670;&nbsp;</a></span>TEST_CASE_METHOD() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST_CASE_METHOD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTestNode.html">TestNode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Validate publisher on topic '/robot_5/cmd_vel'&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;&#160;</td>
+          <td class="paramname">[finderBots]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test case for validating the publisher on the "/robot_5/cmd_vel" topic. </p>
+<p>This test subscribes to the "/robot_5/cmd_vel" topic and ensures that a message is received within the specified duration. </p>
 
 </div>
 </div>

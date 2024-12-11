@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['robotswarm_34',['RobotSwarm',['../classRobotSwarm.html#a78ba819cc0a7359fc8945342773d2680',1,'RobotSwarm']]]
+  ['getyaw_62',['getYaw',['../classFinderBots.html#aafb371852f2d19d2b953c9071cd12319',1,'FinderBots']]]
 ];

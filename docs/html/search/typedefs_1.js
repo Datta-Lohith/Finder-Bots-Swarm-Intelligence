@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['string_48',['STRING',['../finder__bots_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;finder_bots.cpp'],['../lost__parts_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;lost_parts.cpp'],['../warehouse__head_8cpp.html#ad18818391688069f863a0a94c1080360',1,'STRING():&#160;warehouse_head.cpp']]]
+  ['twist_102',['TWIST',['../finder__bots__master_8cpp.html#ae1ddf8c7e712e519f42b1ace6a942c03',1,'finder_bots_master.cpp']]]
 ];

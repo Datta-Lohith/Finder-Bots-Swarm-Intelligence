@@ -1,0 +1,5 @@
+<map id="FinderBots::calculateAngleToGoal" name="FinderBots::calculateAngleToGoal">
+<area shape="rect" id="node1" title="Calculates the angle to the goal position." alt="" coords="5,23,200,65"/>
+<area shape="rect" id="node2" href="$classFinderBots.html#aafb371852f2d19d2b953c9071cd12319" title="Gets the yaw angle from the orientation quaternion." alt="" coords="276,5,421,32"/>
+<area shape="rect" id="node3" href="$classFinderBots.html#a8b5898997f13753962824024ffb32f60" title="Normalizes the angle to the range [&#45;pi, pi]." alt="" coords="248,56,449,83"/>
+</map>

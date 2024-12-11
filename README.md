@@ -29,7 +29,7 @@ To create a collaborative, obstacle-free environment for a swarm of robots:
 ## Activity Diagram
 
 <p align="center">
-<img width="60%" alt="Activity Diagram" src="UML/Initial/activity.png">
+<img width="60%" alt="Activity Diagram" src="UML/Revised/activity_final.png">
 </p>
 
 ## Team
@@ -46,8 +46,7 @@ In phase 0 we have started with high level design which is the UML and made acti
 
 
 ## Phase 1:
-In phase 1 we have started the implementation of high level design which is the UML. Detailed explanation of phase 1 can be seen in the explanation video
-
+In phase 1 we have started the implementation of high level design which is in the UML. Detailed explanation of phase 1 can be seen in the explanation video
 
 ### Deliverables
 [![Phase 1 Video](https://img.shields.io/badge/Explanation%20Video-000000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/drive/folders/1AezMEajkKVZfWjoIooM5w4Lc3BmzG9cc?usp=sharing)
@@ -56,6 +55,16 @@ In phase 1 we have started the implementation of high level design which is the 
 [![Project Backlog](https://img.shields.io/badge/project%20Backlog-000000?style=for-the-badge&logo=libreofficecalc&logoColor=white)](https://docs.google.com/spreadsheets/d/1mzUmKYqlQhvRb29pOtZRma7boKkiH_8TuComcVauGqs/edit?gid=1401548367#gid=1401548367)
 [![Sprint Notes](https://img.shields.io/badge/Sprint%20Notes-000000?style=for-the-badge&logo=libreofficecalc&logoColor=white)](https://docs.google.com/document/d/1_KAaVskDQHgv2-JqpK4O14OvZsn7DmvWvP07JKbWXO4/edit?tab=t.0#heading=h.qjzjmvycu701)
 
+
+## Phase 2:
+In phase 2 we have completed the implementation of high level design which is in the UML. Added New test cases which test the functionality of the classes implemented, also using rosbag. Detailed explanation of phase 2 can be seen in the explanation video
+
+### Deliverables
+[![Phase 2 Video](https://img.shields.io/badge/Explanation%20Video-000000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/drive/folders/1vHlmZVLcN4SkadmPLdZ9S3DudFsQrEha?usp=sharing)
+[![Simulation Video](https://img.shields.io/badge/Simulation%20Video-000000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/drive/folders/1vHlmZVLcN4SkadmPLdZ9S3DudFsQrEha?usp=sharing)
+[![UML Diagrams](https://img.shields.io/badge/UML%20Diagram%20Phase%202-000000?style=for-the-badge&logo=uml&logoColor=white)](UML/Revised/UML_Revised.pdf)
+[![Project Backlog](https://img.shields.io/badge/project%20Backlog-000000?style=for-the-badge&logo=libreofficecalc&logoColor=white)](https://docs.google.com/spreadsheets/d/1mzUmKYqlQhvRb29pOtZRma7boKkiH_8TuComcVauGqs/edit?gid=1401548367#gid=1401548367)
+[![Sprint Notes](https://img.shields.io/badge/Sprint%20Notes-000000?style=for-the-badge&logo=libreofficecalc&logoColor=white)](https://docs.google.com/document/d/1_KAaVskDQHgv2-JqpK4O14OvZsn7DmvWvP07JKbWXO4/edit?tab=t.0#heading=h.qjzjmvycu701)
 
 ## Dependencies Installation
 The project requires opencv library installation. Follow the below procedure to install opencv libraries
@@ -75,6 +84,24 @@ Follow the below procedure to build the code after installing the dependencies
 ```bash
 colcon build --cmake-args -DCOVERAGE=1 --packages-select finder_bots
 ```
+To run the project:
+- Terminal 1
+
+  ```bash
+  ros2 launch finder_bots warehouse.launch.py
+  ```
+
+- Terminal 2(Run this command after all the robots are spawned)
+
+  ```bash
+  ros2 run finder_bots finderBots
+  ```
+  or
+
+  ```bash
+  ros2 launch finder_bots finderBots.launch.py
+  ```
+
 
 To run the tests:
 ```bash
@@ -143,6 +170,11 @@ cpplint --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_orde
 - **`> results/cpplint.txt`**: Redirects the output of the linting results to a file called `cpplint.txt` in the `results` directory. This allows you to review linting feedback later without cluttering the terminal output.
 
 This command runs `cpplint` on all `.cpp` files in the `src` and `test` directory, applies specific filters to customize the linting rules, and saves the output to `results/cpplint.txt`.
+
+## Simulation Video
+
+![Simulation](results/simulation.gif)
+
 
 ## LICENSE
 

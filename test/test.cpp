@@ -2,7 +2,7 @@
  * @file test.cpp
  * @author Datta Lohith Gannavarapu, Dheeraj Vishnubhotla, Nazrin Gurbanova
  * @brief This file contains unit tests for a simple ROS 2 node that tests the creation of a publisher.
- * @version 1.0
+ * @version 2.0
  * @date 2024-11-24
  * @copyright Copyright (c) 2024
  *
@@ -34,6 +34,7 @@ class TestNode : public ::testing::Test {
 
     rclcpp::Node::SharedPtr node_;
 };
+
 /**
  * @brief Test case to verify that a publisher is created successfully.
  * 
@@ -46,6 +47,18 @@ TEST_F(TestNode, test_for_publisher) {
     auto publishers_number = node_->count_publishers("topic");
     EXPECT_EQ(1, static_cast<int>(publishers_number));
 }
+
+/**
+ * @brief Test case to verify that no publishers exist initially.
+ * 
+ * This test checks that before any publisher is created, the number of publishers associated
+ * with the "topic" is equal to 0.
+ */
+TEST_F(TestNode, test_no_initial_publishers) {
+    auto publishers_number = node_->count_publishers("topic");
+    EXPECT_EQ(0, static_cast<int>(publishers_number));
+}
+
 /**
  * @brief Main function to run all tests.
  * 

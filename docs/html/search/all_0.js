@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['count_5f_0',['count_',['../classRobotSwarm.html#ab21287bf7cd0b27c58bfb91356f33b89',1,'RobotSwarm::count_()'],['../classLostParts.html#a2a38a12af166b94fec8512d4cf82a37f',1,'LostParts::count_()'],['../classWarehouseHead.html#a19d9f9b3e2a38f9070640ad6a71d851d',1,'WarehouseHead::count_()']]]
+  ['calculateangletogoal_0',['calculateAngleToGoal',['../classFinderBots.html#a860789e0ae8e068de05167bf3ffa5f96',1,'FinderBots']]],
+  ['calculateeuclideandistance_1',['calculateEuclideanDistance',['../classFinderBots.html#a683d41f73b615e403ac0dddb22b15ebd',1,'FinderBots']]],
+  ['controlloop_2',['controlLoop',['../classFinderBotsMaster.html#a62f1e0394e87fea534ebde227112a401',1,'FinderBotsMaster']]],
+  ['current_5fposition_5f_3',['current_position_',['../classFinderBots.html#a9037604efb816d03a094fc81a7ceb283',1,'FinderBots']]]
 ];

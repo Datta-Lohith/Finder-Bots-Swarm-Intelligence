@@ -2,7 +2,7 @@
  * @file test_lv2.cpp
  * @author Datta Lohith Gannavarapu, Dheeraj Vishnubhotla, Nazrin Gurbanova
  * @brief This file contains a test case for validating the publisher on the "swarm" topic in a ROS 2 node.
- * @version 1.0
+ * @version 2.0
  * @date 2024-11-24
  * @copyright Copyright (c) 2024
  *
@@ -16,8 +16,10 @@
 #include <rclcpp/duration.hpp>
 #include <rclcpp/executors.hpp>
 #include <rclcpp/logging.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/bool.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 #include <catch_ros2/catch_ros2.hpp>
 
 /**
@@ -54,33 +56,149 @@ class TestNode : public rclcpp::Node {
 };
 
 /**
- * @brief Test case for validating the publisher on the "swarm" topic.
+ * @brief Test case for validating the publisher on the "/robot_1/cmd_vel" topic.
  * 
- * This test subscribes to the "swarm" topic and waits for a message to be received within
- * the specified test duration. The test passes if a message is successfully received within 
- * the time frame; otherwise, it fails.
+ * This test subscribes to the "/robot_1/cmd_vel" topic and ensures that a message is received within the specified duration.
  */
-TEST_CASE_METHOD(TestNode, "Validate publisher on topic 'swarm'",
+TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_1/cmd_vel'",
   "[finderBots]") {
+  // Start the test timer
   auto startTime = rclcpp::Clock().now();
   auto duration = rclcpp::Clock().now() - startTime;
   auto timeout = rclcpp::Duration::from_seconds(test_duration_);
 
-  std::string message;
-  // Create subscription to the "swarm" topic
-  auto subscription = create_subscription<std_msgs::msg::String>(
-    "swarm", 10, [&message](std_msgs::msg::String::UniquePtr msg) {
-      message = msg->data;
-    });
+  // Shared pointer to store the received message
+  geometry_msgs::msg::Twist::SharedPtr message = nullptr;
+
+  // Subscription to the "/robot_1/cmd_vel" topic
+  auto subscription = create_subscription<geometry_msgs::msg::Twist>(
+    "/robot_1/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
+
   // Loop until a message is received or the timeout is reached
   while (rclcpp::ok() && duration < timeout) {
     rclcpp::spin_some(this->get_node_base_interface());
     duration = rclcpp::Clock().now() - startTime;
+
+    if (message != nullptr) {
+      break;
+    }
+  }
+
+  // Ensure that a message has been received
+  REQUIRE(message != nullptr);
+}
+
+/**
+ * @brief Test case for validating the publisher on the "/robot_5/cmd_vel" topic.
+ * 
+ * This test subscribes to the "/robot_5/cmd_vel" topic and ensures that a message is received within the specified duration.
+ */
+TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_5/cmd_vel'",
+  "[finderBots]") {
+  // Start the test timer
+  auto startTime = rclcpp::Clock().now();
+  auto duration = rclcpp::Clock().now() - startTime;
+  auto timeout = rclcpp::Duration::from_seconds(test_duration_);
+
+  // Shared pointer to store the received message
+  geometry_msgs::msg::Twist::SharedPtr message = nullptr;
+
+  // Subscription to the "/robot_1/cmd_vel" topic
+  auto subscription = create_subscription<geometry_msgs::msg::Twist>(
+    "/robot_5/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
+
+  // Loop until a message is received or the timeout is reached
+  while (rclcpp::ok() && duration < timeout) {
+    rclcpp::spin_some(this->get_node_base_interface());
+    duration = rclcpp::Clock().now() - startTime;
+
+    if (message != nullptr) {
+      break;
+    }
+  }
+
+  // Ensure that a message has been received
+  REQUIRE(message != nullptr);
+}
+
+/**
+ * @brief Test case for validating the publisher on the "/robot_11/cmd_vel" topic.
+ * 
+ * This test subscribes to the "/robot_11/cmd_vel" topic and ensures that a message is received within the specified duration.
+ */
+TEST_CASE_METHOD(TestNode, "Validate publisher on topic '/robot_11/cmd_vel'",
+  "[finderBots]") {
+  // Start the test timer
+  auto startTime = rclcpp::Clock().now();
+  auto duration = rclcpp::Clock().now() - startTime;
+  auto timeout = rclcpp::Duration::from_seconds(test_duration_);
+
+  // Shared pointer to store the received message
+  geometry_msgs::msg::Twist::SharedPtr message = nullptr;
+
+  // Subscription to the "/robot_1/cmd_vel" topic
+  auto subscription = create_subscription<geometry_msgs::msg::Twist>(
+    "/robot_11/cmd_vel", 10, [&message](geometry_msgs::msg::Twist::UniquePtr
+     msg) {message = std::move(msg);});
+
+  // Loop until a message is received or the timeout is reached
+  while (rclcpp::ok() && duration < timeout) {
+    rclcpp::spin_some(this->get_node_base_interface());
+    duration = rclcpp::Clock().now() - startTime;
+
+    if (message != nullptr) {
+      break;
+    }
+  }
+
+  // Ensure that a message has been received
+  REQUIRE(message != nullptr);
+}
+
+/**
+ * @brief Test case for running a rosbag and checking if the "swarm" topic is subscribed.
+ * 
+ * This test plays a rosbag file and checks if the "swarm" topic is subscribed and receives messages.
+ */
+TEST_CASE_METHOD(TestNode, "Run rosbag and check sub 'red_object_detected'",
+  "[finderBots]") {
+  // Path to the rosbag file
+  std::string rosbag_path = ament_index_cpp::get_package_share_directory
+    ("finder_bots") + "/test/rosbag";
+
+  // Command to play the rosbag file
+  std::string command = "ros2 bag play " + rosbag_path;
+
+
+  auto startTime = rclcpp::Clock().now();
+  auto duration = rclcpp::Clock().now() - startTime;
+  auto timeout = rclcpp::Duration::from_seconds(test_duration_);
+
+  bool message = false;
+
+  // Create subscription to the "red_object_detected" topic
+  auto subscription = create_subscription<std_msgs::msg::Bool>(
+      "/red_object_detected", 10, [&message](std_msgs::msg::Bool::UniquePtr
+       msg) {message = msg->data;});
+
+  static bool rosbag_played = false;
+  while (rclcpp::ok() && duration < timeout) {
+    rclcpp::spin_some(this->get_node_base_interface());
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+    // Start playing the rosbag file only once
+    if (!rosbag_played) {
+      std::system(command.c_str());
+      rosbag_played = true;
+    }
+    duration = rclcpp::Clock().now() - startTime;
     // If a message has been received, exit the loop
-    if (!message.empty()) {
+    if (message) {
       break;
     }
   }
   // Ensure that a message has been received
-  REQUIRE_FALSE(message.empty());
+  REQUIRE(message);
 }
